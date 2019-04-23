@@ -7,15 +7,15 @@ namespace Katas.Models
         public static char[] alphabetUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         public static char[] alphabetLower = Array.ConvertAll(alphabetUpper, letter => Char.ToLower(letter));
 
-        public static char FindMissingLetter(char[] inputArray)
+        public static char FindMissingLetter(char[] input)
         {
-            var alphabetToUse = GetAlphabetToUse(inputArray);
-            var alphabetStartIndex = Array.IndexOf(alphabetToUse, inputArray[0]);
+            var alphabetToUse = GetAlphabetToUse(input);
+            var alphabetStartIndex = Array.IndexOf(alphabetToUse, input[0]);
 
-            for (var i = 0; i < inputArray.Length; i += 1)
+            for (var i = 0; i < input.Length; i += 1)
             {
                 var alphabetIndex = i + alphabetStartIndex;
-                if (inputArray[i] != alphabetToUse[alphabetIndex])
+                if (input[i] != alphabetToUse[alphabetIndex])
                 {
                     return alphabetToUse[alphabetIndex];
                 }
@@ -24,10 +24,10 @@ namespace Katas.Models
             return ' ';
         }
 
-        private static char[] GetAlphabetToUse(char[] array)
+        private static char[] GetAlphabetToUse(char[] input)
         {
-            bool inputArrayIsUpper = Array.Exists(alphabetUpper, element => element == array[0]);
-            var alphabetToUse = inputArrayIsUpper ? alphabetUpper : alphabetLower;
+            var inputContainsUpperCase = Array.Exists(alphabetUpper, element => element == input[0]);
+            var alphabetToUse = inputContainsUpperCase ? alphabetUpper : alphabetLower;
             return alphabetToUse;
         }
     }

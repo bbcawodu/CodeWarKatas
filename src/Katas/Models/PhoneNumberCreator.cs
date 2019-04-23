@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Katas.Models
 {
@@ -6,12 +7,12 @@ namespace Katas.Models
     {
         public static string CreatePhoneNumber(int[] numbers)
         {
-            var areaCode = BuildAreaCodeFromArray(numbers);
-            var restOfNumber = BuildPhoneNumberSuffixFromArray(numbers);
+            var areaCode = BuildAreaCode(numbers);
+            var restOfNumber = BuildPhoneNumberSuffix(numbers);
             return $@"({areaCode}) {restOfNumber}";
         }
 
-        private static string BuildAreaCodeFromArray(int[] numbers)
+        private static string BuildAreaCode(int[] numbers)
         {
             int[] areaCodeSlice = new int[3];
 
@@ -19,14 +20,17 @@ namespace Katas.Models
             return $@"{string.Join("", areaCodeSlice)}";
         }
 
-        private static string BuildPhoneNumberSuffixFromArray(int[] numbers)
+        private static string BuildPhoneNumberSuffix(int[] numbers)
         {
-            int[] suffixFirstPart = new int[3];
-            int[] suffixSecondPart = new int[4];
+            var suffixParts = new List<int[]>
+            {
+                new int[3],
+                new int[4]
+            };
 
-            Array.Copy(numbers, 3, suffixFirstPart, 0, 3);
-            Array.Copy(numbers, 6, suffixSecondPart, 0, 4);
-            return $@"{string.Join("", suffixFirstPart)}-{string.Join("", suffixSecondPart)}";
+            Array.Copy(numbers, 3, suffixParts[0], 0, 3);
+            Array.Copy(numbers, 6, suffixParts[1], 0, 4);
+            return $@"{string.Join("", suffixParts[0])}-{string.Join("", suffixParts[1])}";
         }
     }
 }

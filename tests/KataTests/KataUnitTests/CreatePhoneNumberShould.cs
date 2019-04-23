@@ -8,9 +8,9 @@ namespace KataTests.KataUnitTests
     {
         [Test]
         [TestCase(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, ExpectedResult = "(123) 456-7890")]
-        public static string TestCreatePhoneNumber(int[] phoneNumberArray)
+        public static string TestCreatePhoneNumber(int[] phoneNumber)
         {
-            return PhoneNumberCreator.CreatePhoneNumber(phoneNumberArray);
+            return PhoneNumberCreator.CreatePhoneNumber(phoneNumber);
         }
     }
 }
