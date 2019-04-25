@@ -19,10 +19,7 @@ namespace Katas.Models
     {
         public static long FindNextPerfectSquare(long num)
         {
-            if (!IsPerfectSquare(num))
-            {
-                return -1;
-            }
+            if (!IsPerfectSquare(num)) return -1;
 
             var flooredRoot = Floor(Sqrt(num));
             return (long)Pow(flooredRoot+1, 2);
