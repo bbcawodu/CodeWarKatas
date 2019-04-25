@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 
 namespace Katas.Models
 {
+    /*
+       Return the number (count) of vowels in the given string.
+       
+       We will consider a, e, i, o, and u as vowels for this Kata.
+       
+       The input string will only consist of lower case letters and/or spaces.
+     */
     public class VowelCountGetter
     {
         private static readonly string vowels = "aeiou";
