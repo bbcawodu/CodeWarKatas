@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Math;
 
 namespace Katas.Models
 {
@@ -23,20 +23,15 @@ namespace Katas.Models
             {
                 return -1;
             }
-            while (true)
-            {
-                num += 1;
-                if (IsPerfectSquare(num))
-                {
-                    return num;
-                }
-            }
+
+            var flooredRoot = Floor(Sqrt(num));
+            return (long)Pow(flooredRoot+1, 2);
         }
 
         private static bool IsPerfectSquare(long num)
         {
-            var sqrtOfNum = (decimal)Math.Sqrt(num);
-            return (sqrtOfNum == Math.Floor(sqrtOfNum));
+            var sqrtOfNum = (decimal)Sqrt(num);
+            return (sqrtOfNum == Floor(sqrtOfNum));
         }
     }
 }
