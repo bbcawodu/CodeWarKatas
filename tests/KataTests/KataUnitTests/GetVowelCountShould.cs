@@ -31,7 +31,7 @@ namespace KataTests.KataUnitTests
         [TestCase("ooooooo", ExpectedResult = 7)]
         public int TestGetNumberOfLettersThatAreVowel(string input)
         {
-            return VowelCountGetter.GetNumberOfLettersThatAreVowel(input);
+            return VowelCountGetter.GetNumberOfLettersThatAreVowels(input);
         }
     }
 }
