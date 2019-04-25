@@ -12,16 +12,16 @@ namespace Katas.Models
             return ConvertRecursively(binaryStack);
         }
 
-        public static int ConvertRecursively(Stack<int> binaryDigits, int currentPower = 0)
+        public static int ConvertRecursively(Stack<int> binaryDigits, int currentIteration = 0)
         {
             if (binaryDigits.Count == 0) return 0;
 
             var currentBinaryDigit = binaryDigits.Pop();
-            var currentBinaryValue = currentBinaryDigit == 1 ?
-                (int)Math.Pow(2, currentPower) : 0;
-            currentPower += 1;
+            var currentPower = (int) Math.Pow(2, currentIteration);
+            var currentBinaryValue = currentPower * currentBinaryDigit;
+            currentIteration += 1;
 
-            return currentBinaryValue + ConvertRecursively(binaryDigits, currentPower);
+            return currentBinaryValue + ConvertRecursively(binaryDigits, currentIteration);
         }
     }
 }
