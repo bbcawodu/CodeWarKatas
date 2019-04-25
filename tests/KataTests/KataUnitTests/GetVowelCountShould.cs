@@ -1,5 +1,4 @@
-﻿using System;
-using Katas.Models;
+﻿using Katas.Models;
 using NUnit.Framework;
 
 namespace KataTests.KataUnitTests

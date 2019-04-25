@@ -7,12 +7,13 @@ namespace KataTests.KataUnitTests
     [TestFixture]
     class BinaryArrayToNumberConverterShould
     {
-        int[] test1 = new int[] { 0, 0, 0, 0 };
-        int[] test2 = new int[] { 1, 1, 1, 1 };
-        int[] test3 = new int[] { 0, 1, 1, 0 };
-        int[] test4 = new int[] { 0, 1, 0, 1 };
+        private readonly int[] test1 = { 0, 0, 0, 0 };
+        private readonly int[] test2 = { 1, 1, 1, 1 };
+        private readonly int[] test3 = { 0, 1, 1, 0 };
+        private readonly int[] test4 = { 0, 1, 0, 1 };
+
         [Test]
-        public void BasicTesting()
+        public void TestConvert()
         {
             Assert.AreEqual(0, BinaryArrayToNumberConverter.Convert(test1));
             Assert.AreEqual(15, BinaryArrayToNumberConverter.Convert(test2));

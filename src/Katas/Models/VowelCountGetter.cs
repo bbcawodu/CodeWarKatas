@@ -25,13 +25,9 @@ namespace Katas.Models
 
         public static int GetSumOfIndividualVowelCount(string input)
         {
-            int totalVowelCount = 0;
-
-            foreach (var vowel in vowels)
-            {
-                var vowelCount = input.Count(letter => letter == vowel);
-                totalVowelCount += vowelCount;
-            }
+            int totalVowelCount = vowels.Sum(
+                vowel => input.Count(letter => letter == vowel)
+            );
 
             return totalVowelCount;
         }
