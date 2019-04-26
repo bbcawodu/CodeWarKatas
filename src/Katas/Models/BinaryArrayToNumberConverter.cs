@@ -35,7 +35,7 @@ namespace Katas.Models
 
             var currentBinaryDigit = binaryDigits.Pop();
             var currentPower = (int) Math.Pow(2, currentIteration);
-            var currentBinaryValue = currentPower * currentBinaryDigit;
+            var currentBinaryValue = currentPower*currentBinaryDigit;
             currentIteration += 1;
 
             return currentBinaryValue + ConvertRecursively(binaryDigits, currentIteration);

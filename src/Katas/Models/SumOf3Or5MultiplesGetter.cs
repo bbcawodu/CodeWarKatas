@@ -26,7 +26,9 @@ namespace Katas.Models
         {
             _upperLimit = upperLimit;
             _intsToSum = Enumerable.Range(0, _upperLimit)
-                .Where( number => (number % 3 == 0 || number % 5 == 0));
+                .Where(number =>
+                    (number%3 == 0 || number%5 == 0)
+            );
         }
 
         private int GetSumFromMultiples()
