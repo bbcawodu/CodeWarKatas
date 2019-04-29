@@ -54,6 +54,7 @@ namespace Katas.Models
                 if (input[i] != alphabetToUse[alphabetIndex])
                 {
                     missingLetter = alphabetToUse[alphabetIndex];
+                    return;
                 }
             }
         }
