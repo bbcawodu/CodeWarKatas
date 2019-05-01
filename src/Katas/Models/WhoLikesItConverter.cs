@@ -1,14 +1,14 @@
 ﻿namespace Katas.Models
 {
-    public class WhoLikesItGetter
+    public class WhoLikesItConverter
     {
-        private static string displayText;
-        private static string displayPrefix = "";
         private const string DisplaySuffixSingular = "likes this";
         private const string DisplaySuffixPlural = "like this";
         private const string DisplayForNoOne = "no one";
+        private static string displayText;
+        private static string displayPrefix = "";
 
-        public static string Get(string[] names)
+        public static string Convert(string[] names)
         {
             BuildDisplayPrefix(names);
             BuildDisplayText(names);
